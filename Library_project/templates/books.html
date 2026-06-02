@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Books</h2>
+
+<form method="POST" action="/add_book">
+    <input name="title" placeholder="Title">
+    <input name="author" placeholder="Author">
+    <button>Add</button>
+</form>
+
+<ul>
+{% for b in books %}
+    <li>{{ b[1] }} by {{ b[2] }}
+        <a href="/delete_book/{{ b[0] }}">Delete</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

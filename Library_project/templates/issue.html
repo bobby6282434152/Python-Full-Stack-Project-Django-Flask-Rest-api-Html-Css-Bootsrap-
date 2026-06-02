@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Issue Books</h2>
+
+<form method="POST" action="/issue_book">
+    <input name="book" placeholder="Book Name">
+    <input name="student" placeholder="Student Name">
+    <button>Issue</button>
+</form>
+
+<ul>
+{% for i in data %}
+    <li>
+        {{ i[1] }} → {{ i[2] }} ({{ i[3] }})
+        {% if i[3] == 'Issued' %}
+            <a href="/return_book/{{ i[0] }}">Return</a>
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

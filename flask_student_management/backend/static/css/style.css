@@ -1,0 +1,31 @@
+.form-class{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.add-student{
+  background-color: #4CAF50; /* Green */
+    cursor: pointer;
+
+}
+.update-student{
+  background-color: #008CBA; /* Blue */
+  cursor: pointer;
+
+}
+.delete-student{
+  background-color: #f44336; /* Red */
+  cursor: pointer;
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}

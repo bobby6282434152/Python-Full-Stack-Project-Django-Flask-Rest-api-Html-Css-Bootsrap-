@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>View Students</h1>
+<button class="add-student">
+    <a href="/add_data">Add Student</a>
+</button>
+<table cellpadding="10" cellspacing="0" border="1">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Course</th>
+        <th>Actions</th>
+    </tr>
+    {% if students %}:
+    {% for item in students %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.course }}</td>
+        <td>
+            <button class="update-student">
+                <a href="{{ url_for('update_student', id=item.id) }}">Update</a>
+            </button>
+            <button class="delete-student">
+                <a href="{{ url_for('delete_student', id=item.id) }}">Delete</a>
+            </button>
+        </td>
+    </tr>
+    {% endfor %}
+    {% else %}
+        <h2>No students found.</h2>
+
+    {% endif %}
+</table>
+{% endblock %}
